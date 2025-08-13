@@ -30,7 +30,7 @@ Responsive design for all devices
 **OpenWeather API** – Real-time weather information  
 
 ## Host & deployment
-will be annoced soon...
+host website link:https://689ccb23e1a6844910c5818a--harishsmartweather.netlify.app/
 
 ## demo video
 
