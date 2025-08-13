@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SmartWeather — Harish</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-sun">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-ico">🌤</div>
+      <div class="brand-text">Harish Smart Weather </div>
+    </div>
+
+    <nav class="side-nav">
+      <button class="nav-btn" data-target="home">🏠 Home</button>
+      <button class="nav-btn active" data-target="weather">☁️ Weather</button>
+      <button class="nav-btn" data-target="about">ℹ️ About</button>
+    </nav>
+
+    <div class="note">Cities: Arni, Tiruvannamalai, Polur, Kalambur, Chepet, Vandavasi</div>
+  </aside>
+
+  <main class="main">
+    <!-- HOME -->
+    <section id="home" class="page">
+      <div class="hero">
+        <h1>SmartWeather</h1>
+        <p>Small, smart & colourful weather demo — choose a city and pick type (Auto / Force Sunny / Force Rain).</p>
+        <button class="big-cta" data-target="weather">Open Weather</button>
+      </div>
+    </section>
+
+    <!-- WEATHER -->
+    <section id="weather" class="page active">
+      <div class="controls">
+        <div class="row">
+          <label for="citySelect">Choose city</label>
+          <select id="citySelect" aria-label="Select city">
+            <!-- Only the six cities -->
+            <option value="arni">Arni</option>
+            <option value="tiruvannamalai">Tiruvannamalai</option>
+            <option value="polur">Polur</option>
+            <option value="kalambur">Kalambur</option>
+            <option value="chepet">Chepet</option>
+            <option value="vandavasi">Vandavasi</option>
+          </select>
+
+          <label for="typeSelect">Type</label>
+          <select id="typeSelect" aria-label="Select type">
+            <option value="auto">Auto</option>
+            <option value="sun">Force Sunny</option>
+            <option value="rain">Force Rain</option>
+          </select>
+
+          <button id="showBtn" class="btn-primary">Show</button>
+        </div>
+
+        <div class="quick-row">
+          <button class="city-btn" data-city="arni">Arni</button>
+          <button class="city-btn" data-city="tiruvannamalai">Tiruvannamalai</button>
+          <button class="city-btn" data-city="polur">Polur</button>
+          <button class="city-btn" data-city="kalambur">Kalambur</button>
+          <button class="city-btn" data-city="chepet">Chepet</button>
+          <button class="city-btn" data-city="vandavasi">Vandavasi</button>
+        </div>
+      </div>
+
+      <div id="weatherCard" class="weather-card placeholder">
+        <div class="wc-left">
+          <div id="wcIcon" class="wc-icon">⛅</div>
+          <div id="wcTemp" class="wc-temp">-- °C</div>
+        </div>
+        <div class="wc-right">
+          <h2 id="wcCity">Select a city</h2>
+          <div id="wcCond" class="wc-cond">—</div>
+
+          <div class="pct-row">
+            <div class="pct">
+              <div class="pct-label">Rain</div>
+              <div class="bar"><div id="rainFill" class="fill rain"></div></div>
+              <div id="rainPct" class="pct-num">0%</div>
+            </div>
+
+            <div class="pct">
+              <div class="pct-label">Sunny</div>
+              <div class="bar"><div id="sunFill" class="fill sun"></div></div>
+              <div id="sunPct" class="pct-num">0%</div>
+            </div>
+          </div>
+
+          <div id="wcNote" class="wc-note"></div>
+        </div>
+      </div>
+
+      <!-- raindrop container (JS toggles) -->
+      <div id="raindrops" aria-hidden="true"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="page">
+      <div class="about-card">
+        <h2>About SmartWeather</h2>
+        <p>Demo frontend app by Harish — shows percentage predictions for selected towns. Background and UI change based on which condition (rain/sunny) is stronger to look realistic. Rain mode adds animated raindrops; sunny mode shows warm sunny background.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
