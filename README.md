@@ -29,7 +29,7 @@ Responsive design for all devices
 **JavaScript (ES6)** – Fetching and displaying API data  
 **OpenWeather API** – Real-time weather information  
 
-## deployment
+## Host & deployment
 will be annoced soon...
 
 ## demo video
