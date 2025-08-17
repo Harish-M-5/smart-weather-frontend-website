@@ -46,7 +46,7 @@ https://github.com/user-attachments/assets/d96a7313-2daf-4779-a66a-9cd56074d334
 
 
 
-## 📂 Folder Structure
+## Folder Structure
 smart weather/
 │
 ├── index.html 
