@@ -33,7 +33,7 @@ Built with **HTML, CSS, and JavaScript**, this is a fully responsive frontend pr
 host website link:https://689ccb23e1a6844910c5818a--harishsmartweather.netlify.app/
 
 
-Deployment:netlify.app
+Deployment : netlify.app
 
 ## demo video
 
