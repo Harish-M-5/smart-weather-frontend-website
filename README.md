@@ -16,21 +16,24 @@ Built with **HTML, CSS, and JavaScript**, this is a fully responsive frontend pr
 
 ##  Features
 
-Search weather by city name  
-Real-time weather data using API  
- Displays temperature, humidity, and wind speed  
-Weather condition icons for better visualization  
-Responsive design for all devices  
+*Search weather by city name  
+*Real-time weather data using API  
+*Displays temperature, humidity, and wind speed  
+*Weather condition icons for better visualization  
+*Responsive design for all devices  
 
 
 ##  Technologies Used
-**HTML5** – Structure of the app  
-**CSS3** – Styling and responsive design  
-**JavaScript (ES6)** – Fetching and displaying API data  
+**HTML** – Structure of the app  
+**CSS** – Styling and responsive design  
+**JavaScript** – Fetching and displaying API data  
 **OpenWeather API** – Real-time weather informations 
 
 ## Host & deployment
 host website link:https://689ccb23e1a6844910c5818a--harishsmartweather.netlify.app/
+
+
+Deployment:netlify.app
 
 ## demo video
 
