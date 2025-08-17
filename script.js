@@ -1,4 +1,3 @@
-// Demo data for 6 cities (only these are allowed)
 const weatherData = {
   "arni":  { temp: 32, rain: 70, sun: 30, note: "High chance of rain — carry umbrella." },
   "tiruvannamalai": { temp: 30, rain: 40, sun: 60, note: "Mostly sunny intervals today." },
@@ -8,7 +7,6 @@ const weatherData = {
   "vandavasi": { temp: 27, rain: 35, sun: 65, note: "Mostly sunny with some clouds." }
 };
 
-// DOM refs
 const navBtns = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
 const cityBtns = document.querySelectorAll('.city-btn');
@@ -27,7 +25,6 @@ const sunPct = document.getElementById('sunPct');
 const wcNote = document.getElementById('wcNote');
 const raindrops = document.getElementById('raindrops');
 
-// Navigation
 navBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     navBtns.forEach(b => b.classList.remove('active'));
@@ -39,7 +36,6 @@ navBtns.forEach(btn => {
   });
 });
 
-// Quick city buttons
 cityBtns.forEach(b=>{
   b.addEventListener('click', ()=> {
     const key = b.dataset.city;
@@ -48,13 +44,10 @@ cityBtns.forEach(b=>{
   });
 });
 
-// Show button click
 showBtn.addEventListener('click', updateFromForm);
 
-// when Enter on select + input
 citySelect.addEventListener('keydown', (e)=> { if (e.key==='Enter') updateFromForm(); });
 
-// main updater
 function updateFromForm(){
   const key = (citySelect.value || '').toLowerCase();
   const type = (typeSelect.value || 'auto'); // 'auto' | 'sun' | 'rain'
@@ -64,7 +57,6 @@ function updateFromForm(){
   }
   const d = weatherData[key];
 
-  // compute final mode
   let mode = 'sun'; // 'sun' or 'rain'
   if (type === 'auto') mode = (d.rain > d.sun) ? 'rain' : 'sun';
   else mode = (type === 'rain') ? 'rain' : 'sun';
@@ -81,22 +73,17 @@ function renderCity(key, d, mode){
   wcCond.innerText = (mode === 'rain') ? 'Rain likely' : 'Mostly Sunny';
   wcIcon.innerText = (mode === 'rain') ? '🌧️' : '🌞';
 
-  // animate fills
   setFill(rainFill, d.rain);
   setFill(sunFill, d.sun);
 
-  // theme
   if (mode === 'rain') enableRainTheme();
   else enableSunTheme();
 
-  // scroll card into view
   document.getElementById('weather').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
-// helper to set bar width
 function setFill(el, val){ el.style.width = val + '%'; }
 
-// THEMES
 function enableRainTheme(){
   document.body.classList.remove('theme-sun');
   document.body.classList.add('theme-rain');
@@ -109,11 +96,9 @@ function enableSunTheme(){
   clearRaindrops();
 }
 
-// RAINDROPS: create small DOM drops with random positions & animation
 let raindropInterval = null;
 function createRaindrops(){
   clearRaindrops();
-  // create N drops quickly
   const N = 36;
   for (let i=0;i<N;i++){
     const d = document.createElement('div');
@@ -128,15 +113,12 @@ function createRaindrops(){
     raindrops.appendChild(d);
   }
 }
-// clear
 function clearRaindrops(){
   raindrops.innerHTML = '';
 }
 
-// small helper
 function capitalize(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
 
-// default show Arni on load
 window.addEventListener('DOMContentLoaded', ()=> {
   citySelect.value = 'arni';
   updateFromForm();
