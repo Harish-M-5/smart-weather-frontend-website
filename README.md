@@ -27,7 +27,7 @@ Responsive design for all devices
 **HTML5** – Structure of the app  
 **CSS3** – Styling and responsive design  
 **JavaScript (ES6)** – Fetching and displaying API data  
-**OpenWeather API** – Real-time weather information  
+**OpenWeather API** – Real-time weather informations 
 
 ## Host & deployment
 host website link:https://689ccb23e1a6844910c5818a--harishsmartweather.netlify.app/
